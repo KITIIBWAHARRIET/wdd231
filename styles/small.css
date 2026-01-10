@@ -1,0 +1,172 @@
+/* ===============================
+   GLOBAL STYLES
+================================ */
+:root {
+  --primary-color: #2a6f97;
+  --secondary-color: #f1f1f1;
+  --accent-color: #ffb703;
+  --text-color: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  color: var(--text-color);
+  background-color: #fff;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 0.75rem 1rem;
+  color: #fff;
+}
+
+header img {
+  width: 40px;
+  height: auto;
+}
+
+header span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Hamburger button */
+#menu {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu::before {
+  content: "☰";
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+nav {
+  background-color: var(--secondary-color);
+  display: none;
+}
+
+nav.open {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  text-align: center;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+/* ===============================
+   MAIN CONTENT
+================================ */
+main {
+  padding: 1rem;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* ===============================
+   COURSE SECTION
+================================ */
+#course-filters {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#course-filters button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+}
+
+#course-filters button:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+#courses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.course {
+  padding: 0.75rem;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.course.completed {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer .social {
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+

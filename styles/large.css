@@ -1,0 +1,65 @@
+@media (min-width: 768px) {
+
+  /* ===============================
+     HEADER
+  ================================ */
+  header {
+    padding: 1rem 2rem;
+  }
+
+  header span {
+    font-size: 1.5rem;
+  }
+
+  /* ===============================
+     NAVIGATION
+  ================================ */
+  #menu {
+    display: none;
+  }
+
+  nav {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav li {
+    border: none;
+  }
+
+  nav a {
+    padding: 1rem 1.5rem;
+  }
+
+  /* ===============================
+     MAIN LAYOUT
+  ================================ */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  /* ===============================
+     COURSES GRID
+  ================================ */
+  #courses {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* ===============================
+     FOOTER
+  ================================ */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
