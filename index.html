@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="WDD 231 Course Home Page">
+  <meta name="description" content="Welcome to the WDD 231 course homepage. Explore weekly lessons, projects, and resources for Web Frontend Development at BYU-Idaho.">
   <meta name="author" content="Kitiibwa Harriet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>WDD 231 | Home</title>
+  <title>WDD 231: Web Frontend Development | Home</title>
 
-  <!-- CSS -->>
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/large.css">
   <link rel="stylesheet" href="styles/small.css">
 
@@ -25,9 +25,9 @@
 
 <body>
   <header>
-    <img src="images/logo.webp" alt="Site logo">
+    <img src="images/logo.jpg" alt="Site logo" width="150" height="150">
     <span>Kitiibwa Harriet</span>
-    <button id="menu"></button>
+    <button id="menu" aria-label="Toggle Menu"></button>
   </header>
 
   <nav>
@@ -35,6 +35,7 @@
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="#">Chamber</a></li>
       <li><a href="#">Final</a></li>
+      <li><a href="https://github.com/Kitiibwaharriet" target="_blank" rel="noopener">GitHub</a></li>
     </ul>
   </nav>
 
@@ -53,7 +54,7 @@
         <button id="wdd">WDD</button>
         <button id="cse">CSE</button>
       </div>
-      <div id="courses"></div>
+      <div id="courses" aria-live="polite"></div>
       <p id="credits"></p>
     </section>
 
@@ -65,14 +66,11 @@
 
   <footer>
     <div class="social">
-      <a href="https://github.com/yourusername">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+      <a href="https://github.com/Kitiibwaharriet" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/Kitiibwaharriet" target="_blank" rel="noopener">LinkedIn</a>
     </div>
 
-    <p>
-      &copy; <span id="year"></span> Your Name | Your Country
-    </p>
-
+    <p>&copy; <span id="year"></span> Kitiibwa Harriet | Uganda</p>
     <p id="lastModified"></p>
   </footer>
 </body>
