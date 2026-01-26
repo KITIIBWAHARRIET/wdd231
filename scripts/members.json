@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Sunrise Bakery",
+    "address": "123 Main Street",
+    "phone": "555-1111",
+    "website": "https://sunrisebakery.com",
+    "image": "bakery.webp",
+    "membership": 3
+  },
+  {
+    "name": "Green Leaf Market",
+    "address": "45 Oak Avenue",
+    "phone": "555-2222",
+    "website": "https://greenleafmarket.com",
+    "image": "market.webp",
+    "membership": 2
+  },
+  {
+    "name": "TechNova Solutions",
+    "address": "88 Silicon Blvd",
+    "phone": "555-3333",
+    "website": "https://technova.com",
+    "image": "tech.webp",
+    "membership": 3
+  },
+  {
+    "name": "City Fitness Center",
+    "address": "12 Power Road",
+    "phone": "555-4444",
+    "website": "https://cityfitness.com",
+    "image": "fitness.webp",
+    "membership": 1
+  },
+  {
+    "name": "Bright Smiles Dental",
+    "address": "9 Health Way",
+    "phone": "555-5555",
+    "website": "https://brightsmiles.com",
+    "image": "dental.webp",
+    "membership": 2
+  },
+  {
+    "name": "Elite Realty",
+    "address": "30 Market Street",
+    "phone": "555-6666",
+    "website": "https://eliterealty.com",
+    "image": "realty.webp",
+    "membership": 3
+  },
+  {
+    "name": "Corner Bookshop",
+    "address": "77 Reading Lane",
+    "phone": "555-7777",
+    "website": "https://cornerbooks.com",
+    "image": "books.webp",
+    "membership": 1
+  }
+]

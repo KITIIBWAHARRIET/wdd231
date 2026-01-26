@@ -170,3 +170,23 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Directory layout */
+#members.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+#members.list {
+  display: block;
+}
+
+#members.list section img {
+  display: none;
+}
+
+/* Buttons */
+.view-buttons button {
+  margin: 0.5rem;
+}
+

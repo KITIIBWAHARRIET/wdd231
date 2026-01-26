@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Business directory for My City Chamber of Commerce">
+  <meta name="author" content="KITIIBWA HARRIET">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My City Chamber | Business Directory</title>
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="My City Chamber Business Directory">
+  <meta property="og:description" content="Explore local businesses in My City.">
+  <meta property="og:image" content="images/karry.jpeg">
+  <meta property="og:url" content="https://kitiibwa Harriet.github.io/wdd231/chamber/directory.html">
+
+">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/Members.json" defer></script>
+</head>
+
+<body>
+  
+<header>
+  <h1>My City Chamber of Commerce</h1>
+  <nav>
+    <button id="menu" aria-label="Menu">☰</button>
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Discover</a></li>
+      <li><a href="directory.html" class="active">Directory</a></li>
+      <li><a href="#">Join</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Intro Section -->
+  <section class="intro">
+    <h2>Welcome to Karry Takeaway Restaurant!</h2>
+    <img src="images/karry.jpeg" alt="Karry Takeaway Restaurant">
+    <p>
+      Experience the taste of home at <strong>Karry Takeaway Restaurant</strong>, where every meal is prepared with love and fresh, high-quality ingredients.
+      From mouthwatering comfort food to chef’s special creations, every bite is unforgettable.
+      Join the community of food lovers in Your City and discover why Karry is the go-to spot for delicious, quick, and satisfying meals!
+    </p>
+  </section>
+
+  <!-- View Buttons -->
+  <section class="view-buttons">
+    <button id="grid">Grid View</button>
+    <button id="list">List View</button>
+  </section>
+
+  <!-- Members Directory -->
+  <section id="members" class="grid">
+    <!-- Businesses loaded from JSON via JS -->
+  </section>
+</main>
+
+<footer>
+  <p>Contact: Karry@yourcitychamber.org | +256706191112</p>
+  <p>
+    © <span id="year"></span> Karry City Chamber |
+    KITIIBWA HARRIET | WDD 231 |
+    Last Modified: <span id="lastModified"></span>
+  </p>
+</footer>
+</body>
+</html>

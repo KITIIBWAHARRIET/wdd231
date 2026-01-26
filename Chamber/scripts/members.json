@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Karry Takeaway Restaurant",
+    "address": "123 Main Street, Your City",
+    "phone": "0706191112",
+    "website": "https://karry.com",
+    "image": "karry.webp",
+    "membership": 3
+  },
+  {
+    "name": "Sunrise Bakery",
+    "address": "45 Baker Street",
+    "phone": "555-1111",
+    "website": "https://sunrisebakery.com",
+    "image": "bakery.webp",
+    "membership": 2
+  },
+  {
+    "name": "Green Leaf Market",
+    "address": "88 Oak Avenue",
+    "phone": "555-2222",
+    "website": "https://greenleafmarket.com",
+    "image": "market.webp",
+    "membership": 1
+  }
+]
