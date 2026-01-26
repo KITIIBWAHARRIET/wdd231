@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber Home</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>My Town Chamber of Commerce</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="discover.html">Discover</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<div class="hero">
+    <img src="images/hero.jpeg" alt="Community Hero Image">
+    <a href="join.html" class="cta">Join the Chamber</a>
+</div>
+
+<main>
+    <!-- Current Events Section -->
+    <section class="events">
+        <h2>Current Events</h2>
+        <div class="events-grid">
+
+            <!-- Event 1 -->
+            <div class="event-card">
+                <h3>Community Fair</h3>
+                <p>Saturday, Jan 28</p>
+                <div class="event-images">
+                    <img src="images/fair1.jpeg" alt="Fair 1">
+                    <img src="images/fair2.jpeg" alt="Fair 2">
+                    <img src="images/fair3.jpeg" alt="Fair 3">
+                    <img src="images/fair4.jpeg" alt="Fair 4">
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-card">
+                <h3>Business Networking Breakfast</h3>
+                <p>Feb 3</p>
+                <div class="event-images">
+                    <img src="images/networking1.jpeg" alt="Networking 1">
+                    <img src="images/networking2.jpeg" alt="Networking 2">
+                    <img src="images/networking3.jpeg" alt="Networking 3">
+                    <img src="images/networking4.jpeg" alt="Networking 4">
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card">
+                <h3>Chamber Annual Meeting</h3>
+                <p>Feb 15</p>
+                <div class="event-images">
+                    <img src="images/meeting1.jpeg" alt="Meeting 1">
+                    <img src="images/meeting2.jpeg" alt="Meeting 2">
+                    <img src="images/meeting3.jpeg" alt="Meeting 3">
+                    <img src="images/meeting4.jpeg" alt="Meeting 4">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+        <h2>Current Weather</h2>
+        <div id="weather-info">
+            <p>Loading weather...</p>
+        </div>
+    </section>
+
+    <!-- Company Spotlights -->
+    <section class="spotlights">
+        <h2>Member Spotlights</h2>
+        <div id="spotlight-cards">
+            <p>Loading member spotlights...</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 My Town Chamber of Commerce</p>
+</footer>
+
+<script>
+    // Weather API
+    const weatherDiv = document.getElementById('weather-info');
+    async function getWeather() {
+        const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+        const city = 'Salt Lake City,US';
+        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&cnt=4&appid=${apiKey}`;
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            const current = data.list[0];
+            const forecast = data.list.slice(1,4);
+            let html = `<p>Current: ${current.main.temp}&deg;F, ${current.weather[0].description}</p>`;
+            html += '<ul>';
+            forecast.forEach(f => {
+                html += `<li>${new Date(f.dt_txt).toLocaleDateString()}: ${f.main.temp}&deg;F, ${f.weather[0].description}</li>`;
+            });
+            html += '</ul>';
+            weatherDiv.innerHTML = html;
+        } catch(e) {
+            weatherDiv.innerHTML = "<p>Weather data not available.</p>";
+            console.error(e);
+        }
+    }
+    getWeather();
+
+    // Spotlights
+    const spotlightDiv = document.getElementById('spotlight-cards');
+    async function loadSpotlights() {
+        try {
+            const res = await fetch('members.json');
+            const members = await res.json();
+            const filtered = members.filter(m => m.membership === "Gold" || m.membership === "Silver");
+            const selected = filtered.sort(() => 0.5 - Math.random()).slice(0,3);
+            spotlightDiv.innerHTML = '';
+            selected.forEach(m => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="${m.logo}" alt="${m.name} Logo">
+                    <h3>${m.name}</h3>
+                    <p>Phone: ${m.phone}</p>
+                    <p>Address: ${m.address}</p>
+                    <p>Website: <a href="${m.website}" target="_blank">${m.website}</a></p>
+                    <p>Membership: ${m.membership}</p>
+                `;
+                spotlightDiv.appendChild(card);
+            });
+        } catch(e) {
+            spotlightDiv.innerHTML = "<p>Spotlights not available.</p>";
+            console.error(e);
+        }
+    }
+    loadSpotlights();
+</script>
+
+</body>
+</html>
