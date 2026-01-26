@@ -7,24 +7,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My City Chamber | Business Directory</title>
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="My City Chamber Business Directory">
-  <meta property="og:description" content="Explore local businesses in My City.">
-  <meta property="og:image" content="images/karry.jpeg">
-  <meta property="og:url" content="https://kitiibwa Harriet.github.io/wdd231/chamber/directory.html">
-
-">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/large.css">
 
-  <script src="scripts/dates.js" defer></script>
-  <script src="scripts/directory.js" defer></script>
-  <script src="scripts/Members.json" defer></script>
-</head>
+  <style>
+    /* Members grid */
+    #members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
 
+    .member-card {
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 0.5rem;
+    }
+
+    .member-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      border-radius: 5px;
+    }
+
+    .member-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      color: #1f4e79;
+    }
+
+    .member-card p, .member-card a {
+      font-size: 0.9rem;
+      color: #333;
+      margin: 0.2rem 0;
+      display: block;
+    }
+
+    .member-card a {
+      color: #1f4e79;
+      text-decoration: none;
+    }
+
+    .member-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      #members {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      #members {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
 <body>
-  
 <header>
   <h1>My City Chamber of Commerce</h1>
   <nav>
@@ -41,24 +91,70 @@
 <main>
   <!-- Intro Section -->
   <section class="intro">
-    <h2>Welcome to Karry Takeaway Restaurant!</h2>
-    <img src="images/karry.jpeg" alt="Karry Takeaway Restaurant">
+    <h2>Welcome to Jinja City, Uganda!</h2>
     <p>
-      Experience the taste of home at <strong>Karry Takeaway Restaurant</strong>, where every meal is prepared with love and fresh, high-quality ingredients.
-      From mouthwatering comfort food to chef’s special creations, every bite is unforgettable.
-      Join the community of food lovers in Your City and discover why Karry is the go-to spot for delicious, quick, and satisfying meals!
+   Jinja is a vibrant city in eastern Uganda, located on the shores of Lake Victoria and at the source of the River Nile. Known as the “Adventure Capital of East Africa,” it’s famous for white-water rafting, kayaking, and stunning natural scenery. The city also has a rich history, with colonial-era architecture, bustling markets, and thriving agriculture and industry.
     </p>
   </section>
 
-  <!-- View Buttons -->
-  <section class="view-buttons">
-    <button id="grid">Grid View</button>
-    <button id="list">List View</button>
-  </section>
-
-  <!-- Members Directory -->
-  <section id="members" class="grid">
-    <!-- Businesses loaded from JSON via JS -->
+  <!-- Members Directory Grid with hardcoded images -->
+  <section id="members">
+    <div class="member-card">
+      <img src="images/karry.jpeg" alt="Karry Takeaway Restaurant">
+      <h3>Karry Takeaway Restaurant</h3>
+      <p>123 Main Street, Your City</p>
+      <p>0706191112</p>
+      <a href="https://karry.com" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/cafe.jpeg" alt="Sunrise Bakery">
+      <h3>Sunrise Bakery</h3>
+      <p>45 Baker Street</p>
+      <p>555-1111</p>
+      <a href="https://igar.com" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/market.jpeg" alt="Green Leaf Market">
+      <h3>Green Leaf Market</h3>
+      <p>88 Oak Avenue</p>
+      <p>555-2222</p>
+      <a href="https://greenleafmarket.com" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/sikia.webp" alt="Restaurant 4">
+      <h3>Restaurant 4</h3>
+      <p>12 Elm Street</p>
+      <p>555-3333</p>
+      <a href="#" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/bakery.jpeg" alt="Restaurant 5">
+      <h3>Restaurant 5</h3>
+      <p>34 Pine Road</p>
+      <p>555-4444</p>
+      <a href="#" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/busowoko.jpeg" alt="Water Falls">
+      <h3>Water Fall</h3>
+      <p>56 Maple Avenue</p>
+      <p>555-5555</p>
+      <a href="#" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/water.jpeg" alt="Water Falls">
+      <h3>Source of the Nile</h3>
+      <p>56 Maple Avenue</p>
+      <p>555-5555</p>
+      <a href="#" target="_blank">Visit Website</a>
+    </div>
+    <div class="member-card">
+      <img src="images/busowoko.jpeg" alt="Water Falls">
+      <h3>Water Falls</h3>
+      <p>56 Maple Avenue</p>
+      <p>555-5555</p>
+      <a href="#" target="_blank">Visit Website</a>
+    </div>
   </section>
 </main>
 
@@ -70,5 +166,18 @@
     Last Modified: <span id="lastModified"></span>
   </p>
 </footer>
+
+<script>
+  // Display current year and last modified
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("lastModified").textContent = document.lastModified;
+
+  // Mobile nav toggle
+  const menuBtn = document.getElementById("menu");
+  const navList = document.querySelector(".navigation");
+  menuBtn.addEventListener("click", () => {
+    navList.classList.toggle("show");
+  });
+</script>
 </body>
 </html>
