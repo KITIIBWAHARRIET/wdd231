@@ -11,12 +11,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Directory | My City Chamber of Commerce">
-  <meta property="og:description" content="Explore our business directory for local members of the My City Chamber of Commerce. Find restaurants, markets, and more.">
-  <meta property="og:image" content="https://kitiibwaharriet.github.io/wdd231/Chamber/images/favicon.png">
-  <meta property="og:url" content="https://kitiibwaharriet.github.io/wdd231/Chamber/directory.html">
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +23,7 @@
   <link rel="stylesheet" href="styles/members.css">
 </head>
 <body>
+  <!-- HEADER -->
   <header>
     <nav>
       <button id="menu" aria-label="Menu">☰</button>
@@ -41,19 +36,19 @@
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <!-- Single H1 as required -->
     <h1>Directory | My City Chamber of Commerce</h1>
 
-    <!-- Intro Section -->
     <section class="intro">
       <h2>Welcome to Jinja City, Uganda!</h2>
       <p>
-        Jinja is a vibrant city in eastern Uganda, located on the shores of Lake Victoria and at the source of the River Nile. Known as the “Adventure Capital of East Africa,” it’s famous for white-water rafting, kayaking, and stunning natural scenery. The city also has a rich history, with colonial-era architecture, bustling markets, and thriving agriculture and industry.
+        Jinja is a vibrant city in eastern Uganda, located on the shores of Lake Victoria and at the source of the River Nile.
+        Known as the “Adventure Capital of East Africa,” it’s famous for white-water rafting, kayaking, and stunning natural scenery.
+        The city also has a rich history, with colonial-era architecture, bustling markets, and thriving agriculture and industry.
       </p>
     </section>
 
-    <!-- Members Directory Grid -->
     <section id="members">
       <div class="member-card">
         <img src="images/karry.jpeg" alt="Karry Takeaway Restaurant">
@@ -114,8 +109,14 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>Contact: Karry@yourcitychamber.org | +256706191112</p>
-    <p>
-      © <span id="year"></span> Karry City Chamber |
-      KITIIBWA HARRIET
+    <p>© <span id="year"></span> Karry City Chamber | KITIIBWA HARRIET</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+</body>
+</html>
