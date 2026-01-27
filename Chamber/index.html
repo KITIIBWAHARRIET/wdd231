@@ -23,14 +23,20 @@
         content="https://kitiibwaharriet.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
+   <link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/styles.css">
+
 </head>
 
 <body>
 
 <header>
-    <h1>My Town Chamber of Commerce</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="discover.html">Discover</a>
@@ -41,11 +47,12 @@
 
 <!-- Hero Section -->
 <section class="hero">
-    <img src="images/hero.jpeg" alt="Community in My Town, Uganda">
+    <img src="images/hero.jpg" alt="Community in My Town, Uganda">
     <a href="join.html" class="cta">Join the Chamber</a>
 </section>
 
 <main>
+    <h1>My Town Chamber of Commerce</h1>
 
     <!-- Current Events -->
     <section class="events">
@@ -57,10 +64,10 @@
                 <h3>Community Fair</h3>
                 <p>Saturday, Jan 28</p>
                 <div class="event-images">
-                    <img src="images/fair1.jpeg" alt="Community fair image 1">
-                    <img src="images/fair2.jpeg" alt="Community fair image 2">
-                    <img src="images/fair3.jpeg" alt="Community fair image 3">
-                    <img src="images/fair4.jpeg" alt="Community fair image 4">
+                    <img src="images/fair1.jpg" alt="Community fair activities">
+                    <img src="images/fair2.jpg" alt="Local vendors at the fair">
+                    <img src="images/fair3.jpeg" alt="Families enjoying the fair">
+                    <img src="images/fair4.jpeg" alt="Entertainment at the fair">
                 </div>
             </div>
 
@@ -68,10 +75,10 @@
                 <h3>Business Networking Breakfast</h3>
                 <p>February 3</p>
                 <div class="event-images">
-                    <img src="images/networking1.jpeg" alt="Networking event image 1">
-                    <img src="images/networking2.jpeg" alt="Networking event image 2">
-                    <img src="images/networking3.jpeg" alt="Networking event image 3">
-                    <img src="images/networking4.jpeg" alt="Networking event image 4">
+                    <img src="images/networking1.jpeg" alt="Business networking session">
+                    <img src="images/networking2.jpeg" alt="Entrepreneurs meeting">
+                    <img src="images/networking3.jpeg" alt="Professional discussions">
+                    <img src="images/networking4.jpeg" alt="Networking breakfast">
                 </div>
             </div>
 
@@ -79,10 +86,10 @@
                 <h3>Annual Chamber Meeting</h3>
                 <p>February 15</p>
                 <div class="event-images">
-                    <img src="images/meeting1.jpeg" alt="Meeting image 1">
-                    <img src="images/meeting2.jpeg" alt="Meeting image 2">
-                    <img src="images/meeting3.jpeg" alt="Meeting image 3">
-                    <img src="images/meeting4.jpeg" alt="Meeting image 4">
+                    <img src="images/meeting1.jpeg" alt="Chamber meeting in session">
+                    <img src="images/meeting2.jpeg" alt="Members discussion">
+                    <img src="images/meeting3.jpeg" alt="Business leaders presenting">
+                    <img src="images/meeting4.jpeg" alt="Annual meeting attendees">
                 </div>
             </div>
 
@@ -111,84 +118,7 @@
     <p>&copy; 2026 My Town Chamber of Commerce | Harriet Kitiibwa</p>
 </footer>
 
-<script>
-/* ================= WEATHER ================= */
-const weatherDiv = document.getElementById("weather-info");
-
-async function getWeather() {
-    const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // replace before submit
-    const city = "Kampala,UG";
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=4&appid=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        const current = data.list[0];
-        const forecast = data.list.slice(1, 4);
-
-        let html = `
-            <p><strong>Current:</strong> ${current.main.temp}°C — ${current.weather[0].description}</p>
-            <h3>Next Forecasts</h3>
-            <ul>
-        `;
-
-        forecast.forEach(item => {
-            html += `<li>${new Date(item.dt_txt).toLocaleDateString()}:
-                ${item.main.temp}°C — ${item.weather[0].description}</li>`;
-        });
-
-        html += "</ul>";
-        weatherDiv.innerHTML = html;
-
-    } catch (error) {
-        weatherDiv.innerHTML = "<p>Weather data unavailable.</p>";
-        console.error(error);
-    }
-}
-
-getWeather();
-
-/* ================= SPOTLIGHTS ================= */
-const spotlightDiv = document.getElementById("spotlight-cards");
-
-async function loadSpotlights() {
-    try {
-        const response = await fetch("data/members.json");
-        const members = await response.json();
-
-        const eligible = members.filter(
-            m => m.membership === "Gold" || m.membership === "Silver"
-        );
-
-        const selected = eligible.sort(() => 0.5 - Math.random()).slice(0, 3);
-
-        spotlightDiv.innerHTML = "";
-
-        selected.forEach(member => {
-            const card = document.createElement("div");
-            card.classList.add("card");
-
-            card.innerHTML = `
-                <img src="${member.logo}" alt="${member.name} logo">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>Phone: ${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p><strong>${member.membership} Member</strong></p>
-            `;
-
-            spotlightDiv.appendChild(card);
-        });
-
-    } catch (error) {
-        spotlightDiv.innerHTML = "<p>Unable to load spotlights.</p>";
-        console.error(error);
-    }
-}
-
-loadSpotlights();
-</script>
+<script src="scripts/main.js" defer></script>
 
 </body>
 </html>
