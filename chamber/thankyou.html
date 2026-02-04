@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <meta name="description" content="Thank you for applying to join the Chamber of Commerce.">
+  <link rel="stylesheet" href="styles/join.css">
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const summary = document.getElementById("summary");
+      const params = new URLSearchParams(window.location.search);
+
+      const fname = params.get("fname") || '';
+      const lname = params.get("lname") || '';
+      const email = params.get("email") || '';
+      const business = params.get("business") || '';
+      const membership = params.get("membership") || '';
+
+      summary.innerHTML = `
+        <h3>Submission Summary</h3>
+        <p><strong>Name:</strong> ${fname} ${lname}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Business / Organization:</strong> ${business}</p>
+        <p><strong>Membership Level:</strong> ${membership}</p>
+      `;
+    });
+  </script>
+</head>
+
+<body>
+
+<header>
+  <h1>Chamber of Commerce</h1>
+</header>
+
+<nav aria-label="Main Navigation">
+  <a href="index.html">Home</a>
+  <a href="join.html">Join</a>
+</nav>
+
+<main>
+  <h2>Thank You for Applying!</h2>
+  <p>We appreciate your interest in joining our Chamber.</p>
+
+  <section id="summary" class="card"></section>
+</main>
+
+<footer>
+  <p>© 2026 Chamber of Commerce</p>
+</footer>
+
+</body>
+</html>
