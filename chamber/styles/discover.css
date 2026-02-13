@@ -1,0 +1,96 @@
+/* Blue theme layout */
+
+body {
+    margin:0;
+    font-family: Arial;
+    background:#f2f6fb;
+}
+
+/* HEADER */
+
+header {
+    background:#1559a6;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+nav {
+    margin-top:10px;
+}
+
+nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+}
+
+/* GRID LAYOUT */
+
+.discover-grid {
+    display:grid;
+    grid-template-columns: 250px 1fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    background:white;
+    padding:15px;
+    border-radius:8px;
+}
+
+/* CARDS */
+
+.card {
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:scale(1.03);
+}
+
+.card img {
+    width:100%;
+    border-radius:8px;
+}
+
+/* FOOTER */
+
+footer {
+    background:#1559a6;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* MOBILE */
+
+#menuBtn {
+    display:none;
+}
+
+@media (max-width:768px) {
+
+.discover-grid {
+    grid-template-columns:1fr;
+}
+
+#menuBtn {
+    display:block;
+}
+
+nav {
+    display:none;
+}
+
+nav.open {
+    display:block;
+}
+
+}

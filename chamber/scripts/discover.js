@@ -1,43 +1,33 @@
-import { places } from "..sripts/data.mjs";
+// Hamburger Menu
 
-// Populate cards
-const container = document.querySelector(".discover-grid");
+const menuBtn = document.querySelector("#menuBtn");
+const nav = document.querySelector("#navMenu");
 
-places.forEach((place, index) => {
-  const card = document.createElement("section");
-  card.innerHTML = `
-    <h2>${place.name}</h2>
-    <figure><img src="${place.image}" alt="${place.name}" loading="lazy"></figure>
-    <address>${place.address}</address>
-    <p>${place.description}</p>
-    <button>Learn More</button>
-  `;
-  container.appendChild(card);
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("open");
 });
 
-// localStorage visitor message
-const message = document.querySelector("#visit-message");
-const now = Date.now();
+
+// Visit message (rubric requirement)
+
+const visitMessage = document.querySelector("#visitMessage");
+
 const lastVisit = localStorage.getItem("lastVisit");
+const now = Date.now();
 
 if (!lastVisit) {
-  message.textContent = "Welcome! Let us know if you have any questions.";
+
+    visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+
 } else {
-  const days = Math.floor((now - lastVisit)/86400000);
-  if (days < 1) message.textContent = "Back so soon! Awesome!";
-  else if (days === 1) message.textContent = "You last visited 1 day ago.";
-  else message.textContent = `You last visited ${days} days ago.`;
+
+    const days = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+
+    if (days < 1) {
+        visitMessage.textContent = "Back so soon! Awesome!";
+    } else {
+        visitMessage.textContent = `You last visited ${days} day(s) ago.`;
+    }
 }
+
 localStorage.setItem("lastVisit", now);
-
-// Hamburger menu toggle
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-});
-console.log("DISCOVER PAGE WORKING");
-
-document.querySelector("main").innerHTML += "<h2>Discover content loaded!</h2>";
-
