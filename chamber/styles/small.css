@@ -198,5 +198,10 @@ footer a:hover {
     align-items: center;
     gap: 10px;
 }
+nav {
+    background-color: #1559a6;
+    color: white;
+}
+
 
 
