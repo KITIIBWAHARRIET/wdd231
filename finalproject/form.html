@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reservation Form | Karry Marionaz Hotel</title>
+
+<meta name="description" content="Book your stay at Karry Marionaz Hotel in Jinja.">
+<meta name="author" content="Harriet Kitiibwa">
+
+<link rel="stylesheet" href="styles/style.css">
+<script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav-container">
+    <h1>Karry Marionaz Hotel</h1>
+    <button id="menuBtn" aria-label="Open navigation menu">&#9776;</button>
+    <nav>
+      <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="form.html" class="active">Book</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h2>Reservation Form</h2>
+
+  <form method="get" action="thanks.html" class="contact-form">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="checkin">Check-In Date</label>
+    <input type="date" id="checkin" name="checkin" required>
+
+    <label for="nights">Number of Nights</label>
+    <input type="number" id="nights" name="nights" min="1" required>
+
+    <label for="room">Room Type</label>
+    <select id="room" name="room" required>
+      <option value="">Select a room</option>
+      <option value="Deluxe Room">Deluxe Room</option>
+      <option value="Executive Suite">Executive Suite</option>
+      <option value="Presidential Suite">Presidential Suite</option>
+    </select>
+
+    <button type="submit" class="btn">Submit Reservation</button>
+
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2026 Karry Marionaz Hotel</p>
+</footer>
+
+</body>
+</html>

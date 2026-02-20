@@ -1,0 +1,17 @@
+[
+  {"id":1,"name":"Deluxe Room","price":120,"capacity":"2 Guests","description":"Elegant room with balcony and city view.","image":"images/room1.jpg"},
+  {"id":2,"name":"Executive Suite","price":180,"capacity":"3 Guests","description":"Spacious suite with premium furnishings.","image":"images/room2.jpg"},
+  {"id":3,"name":"Presidential Suite","price":300,"capacity":"4 Guests","description":"Luxury suite with private lounge.","image":"images/room3.jpg"},
+  {"id":4,"name":"Standard Room","price":90,"capacity":"2 Guests","description":"Comfortable room with modern amenities.","image":"images/room4.jpg"},
+  {"id":5,"name":"Family Suite","price":220,"capacity":"5 Guests","description":"Perfect for families with extra space.","image":"images/room5.jpg"},
+  {"id":6,"name":"Superior Room","price":140,"capacity":"2 Guests","description":"Refined comfort with elegant décor.","image":"images/room6.jpg"},
+  {"id":7,"name":"Business Room","price":160,"capacity":"2 Guests","description":"Ideal for corporate travelers.","image":"images/room7.jpg"},
+  {"id":8,"name":"Twin Room","price":110,"capacity":"2 Guests","description":"Two beds with relaxing ambiance.","image":"images/room8.jpg"},
+  {"id":9,"name":"Garden View Room","price":130,"capacity":"2 Guests","description":"Overlooking beautiful gardens.","image":"images/room9.jpg"},
+  {"id":10,"name":"Pool View Room","price":150,"capacity":"2 Guests","description":"Enjoy scenic poolside views.","image":"images/room10.jpg"},
+  {"id":11,"name":"Luxury Suite","price":250,"capacity":"3 Guests","description":"Premium suite with deluxe finishes.","image":"images/room11.jpg"},
+  {"id":12,"name":"Penthouse","price":400,"capacity":"4 Guests","description":"Top-floor luxury experience.","image":"images/room12.jpg"},
+  {"id":13,"name":"Economy Room","price":75,"capacity":"2 Guests","description":"Affordable comfort stay.","image":"images/room13.jpg"},
+  {"id":14,"name":"Honeymoon Suite","price":280,"capacity":"2 Guests","description":"Romantic setting for couples.","image":"images/room14.jpg"},
+  {"id":15,"name":"Accessible Room","price":100,"capacity":"2 Guests","description":"Designed for accessibility and comfort.","image":"images/room15.jpg"}
+]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reservation Confirmation</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>Karry Marionaz Hotel</h1>
+  </div>
+</header>
+
+<main class="container">
+  <h2>Reservation Confirmation</h2>
+  <div id="result"></div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Karry Marionaz Hotel</p>
+</footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.querySelector("#result").innerHTML = `
+<p><strong>Name:</strong> ${params.get("name")}</p>
+<p><strong>Email:</strong> ${params.get("email")}</p>
+<p><strong>Check-In Date:</strong> ${params.get("checkin")}</p>
+<p><strong>Nights:</strong> ${params.get("nights")}</p>
+<p><strong>Room:</strong> ${params.get("room")}</p>
+`;
+</script>
+
+</body>
+</html>
