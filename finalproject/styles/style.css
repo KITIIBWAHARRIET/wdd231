@@ -1,0 +1,200 @@
+:root {
+  --primary: #0b3c5d;
+  --dark: #072c44;
+  --accent: #d4af37;
+  --light: #f4f7fa;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+}
+
+header, footer {
+  background: var(--primary);
+  color: var(--white);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom: 2px solid var(--accent);
+}
+
+#menuBtn {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.hero {
+  background: url("../images/hero.jpg") center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.btn {
+  background: var(--accent);
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  #menuBtn {
+    display: block;
+  }
+}
+/* Hero section container */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  background-image: url('images/hero.jpeg'); /* hero image as background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;   /* vertical center */
+  justify-content: center; /* horizontal center */
+  text-align: center;
+  color: white;
+}
+
+/* Overlay behind content */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  z-index: 0;                   /* make sure it's behind hero content */
+  pointer-events: none;         /* allow clicks to pass through */
+}
+
+/* Hero text container */
+.hero-text {
+  position: relative;
+  z-index: 1;  /* above overlay but below header if header has higher z-index */
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Buttons */
+.hero-text .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: rgba(255,255,255,0.8);
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.hero-text .btn:hover {
+  background-color: rgba(255,255,255,1);
+}
+
+/* Responsive text scaling */
+.hero-text h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+/* Header should be above hero */
+header {
+  position: relative;   /* or fixed if you want sticky nav */
+  z-index: 10;          /* higher than hero overlay */
+}

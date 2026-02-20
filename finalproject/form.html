@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Form Results</title>
+
+</head>
+
+<body>
+
+<h2>Submitted Information</h2>
+
+<div id="results"></div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("results").innerHTML = `
+<p>Name: ${params.get("name")}</p>
+<p>Email: ${params.get("email")}</p>
+`;
+
+</script>
+
+</body>
+</html>
